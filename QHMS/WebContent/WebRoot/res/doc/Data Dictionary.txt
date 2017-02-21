@@ -1,0 +1,5 @@
+qhmsdb.user.team = User.group
+qhmsdb.user.type = User.type
+qhmsdb.user.type.0 = User.type.student
+qhmsdb.user.type.1 = User.type.administrator
+

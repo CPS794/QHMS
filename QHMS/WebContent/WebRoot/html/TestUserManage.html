@@ -1,0 +1,120 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>User Manage</title>
+    <!--这个是IE8的专用标记，是用来指定Internet Explorer 8 浏览器模拟某个特定版本IE浏览器的渲染方式，以此来解决IE浏览器的兼容问题。 -->
+    <!-- <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"> -->
+    <!--浏览器渲染及高速模式  为了让 IE 浏览器运行最新的渲染模式下  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 在双核浏览器情况下,使用极速模式 webkit内核渲染-->
+    <meta name="renderer" content="webkit">
+    <!-- 以下三句搭配用清缓存-->
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <!-- import jQuery -->
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/jquery/jquery-2.1.4.min.js"></script>
+    <!-- import Bootstrap -->
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <!-- import Bootbox -->
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/bootstrap-3.3.6-dist/js/bootbox.min.js"></script>
+    <!-- import DataTable -->
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/DataTables/datatables.js"></script>
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/DataTables/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/DataTables/Buttons-1.1.2/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/DataTables/Buttons-1.1.2/js/buttons.colVis.min.js"></script>
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/DataTables/Buttons-1.1.2/js/buttons.bootstrap.min.js"></script>
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/DataTables/FixedHeader-3.1.1/js/dataTables.fixedHeader.min.js"></script>
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/DataTables/Responsive-2.0.2/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/DataTables/Select-1.1.2/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/DataTables/Responsive-2.0.2/js/responsive.bootstrap.min.js"></script>
+    <!-- import DateTimePicker -->
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/bootstrap-3.3.6-dist/js/bootstrap-datetimepicker.min.js"></script>
+    <!-- import default style -->
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/plugin/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <!-- import DateTimePicker style -->
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/plugin/bootstrap-3.3.6-dist/css/bootstrap-datetimepicker.min.css">
+    <!-- import DataTable style -->
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/plugin/DataTables/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/plugin/DataTables/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/plugin/DataTables/Buttons-1.1.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/plugin/DataTables/Buttons-1.1.2/css/buttons.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/plugin/DataTables/FixedHeader-3.1.1/css/fixedHeader.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/plugin/DataTables/FixedHeader-3.1.1/css/fixedHeader.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/plugin/DataTables/Responsive-2.0.2/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/plugin/DataTables/Responsive-2.0.2/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/plugin/DataTables/Select-1.1.2/css/select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/plugin/DataTables/Select-1.1.2/css/select.bootstrap.min.css">
+    <!-- import international javascript -->
+    <!-- import custom javascript -->
+    <script type="text/javascript" src="/QHMS/WebRoot/js/basic/enum.js"></script>
+    <script type="text/javascript" src="/QHMS/WebRoot/js/basic/utility.js"></script>
+    <script type="text/javascript" src="/QHMS/WebRoot/js/basic/component.js"></script>
+    <!-- import custom stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/css/public.css">
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/css/basic/patch.css">
+</head>
+
+<body class="sidebar-push sidebar-push-toright">
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/css/basic/sidebar.css">
+    <script src="/QHMS/WebRoot/js/basic/menu.js" type="text/javascript"></script>
+    <script src="/QHMS/WebRoot/js/basic/sidebar.js" type="text/javascript"></script>
+    <!-- 用于从session中取值的隐藏域，本页面需要学号  -->
+    <input id="hiddenNumber" value="000" type="hidden">
+    <input id="hiddenName" value="000-adm" type="hidden">
+    <input id="hiddenType" value="1" type="hidden">
+    <!--Start Sidebar-->
+    <div class="sidebar sidebar-vertical sidebar-left sidebar-open" id="mainNav">
+        <div id="logo">
+            <img class="picture" src="/QHMS/WebRoot/image/userIcon.png" height="200" width="200">
+            <br>
+            <span id="userInfo">欢迎 000-adm老师 使用<br>题库作业管理系统！</span>
+            <br>
+        </div>
+        <nav id="nav">
+            <ul class="mainMenu">
+                <li onclick="goHome()" class="mainLi">系统首页</li>
+                <li></li>
+                <li class="mainLi">作业管理
+                    <ul class="subMenu" style="display: none;">
+                        <li><a href="">章节总览</a></li>
+                        <li><a href="">查看成绩</a></li>
+                    </ul>
+                </li>
+                <li class="mainLi">用户管理
+                    <ul class="subMenu" style="display: none;">
+                        <li><a href="adminManage.action">系统管理员</a></li>
+                        <li><a href="">学生</a></li>
+                    </ul>
+                </li>
+                <li class="mainLi">个人信息
+                    <ul class="subMenu" style="display: none;">
+                        <li onclick="showPasswordDialog(&quot;modifyInfo.action&quot;)"><a href="">修改信息</a></li>
+                        <li onclick="showPasswordDialog(&quot;password.action&quot;)"><a href="">修改密码</a></li>
+                    </ul>
+                </li>
+                <li onclick="exitSystem()" class="mainLi">安全退出</li>
+                <li></li>
+                <li onclick="aboutUs()" class="mainLi">关于我们</li>
+                <li></li>
+            </ul>
+        </nav>
+    </div>
+    <!--End Sidebar-->
+    <div class="menuBtn" id="sidebarToggle">菜单</div>
+    <!--Start Main-->
+    <div class="main">
+        <div>User Manage Page!</div>
+        <table id="userManageTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <!--End Main-->
+</body>
+<script type="text/javascript" src="/QHMS/WebRoot/js/manage/userManageAdmin.js"></script>
+
+</html>

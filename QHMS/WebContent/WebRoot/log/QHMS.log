@@ -1,0 +1,4 @@
+﻿[QHMS]  2016-03-05 16:26:33  INFO TestStudentDAO:35 : [Student [id=41371086, name=Smile, password=null, studentClass=管信132, group=0, type=0, valid=false]]
+[QHMS]  2016-03-05 16:26:33  INFO TestStudentDAO:39 : Student [id=41371086, name=孙梦瑶, password=null, studentClass=管信132, group=0, type=0, valid=false]
+[QHMS]  2016-03-05 16:26:33  INFO TestStudentDAO:43 : [Student [id=41371086, name=SmileAgain, password=null, studentClass=管信132, group=0, type=0, valid=false]]
+[QHMS]  2016-03-05 16:26:33  INFO TestStudentDAO:45 : [Student [id=000, name=000-stu, password=null, studentClass=000, group=0, type=0, valid=false], Student [id=41371086, name=SmileAgain, password=null, studentClass=管信132, group=0, type=0, valid=false]]

@@ -1,0 +1,122 @@
+@charset "utf-8";
+/*=============color===============*/
+/*==============font================*/
+/*==============size================*/
+/* 样式清零 */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  /* 样式清零 */
+  /* 基线对齐 */
+  vertical-align: baseline;
+  text-decoration: none;
+  list-style: none;
+}
+/* 整体页面的样式 */
+
+html body {
+  background: #f1f2f6;
+  font-family: "Microsoft YaHei", serif;
+}
+.main {
+  margin-left: 5px;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: #c0c8c9;
+}
+.btn:hover {
+  border: solid 1px transparent;
+}
+/* 合并边框 */
+
+table {
+  border-collapse: collapse;
+}
+/* 防止用户拉伸 */
+
+textarea {
+  resize: none;
+}
+.questionNumber {
+  float: left;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  background-color: #22a5f5;
+  cursor: pointer;
+  color: #f1f2f6;
+  text-align: center;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.questionNumberFinished {
+  float: left;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  background-color: #fb6e52;
+  cursor: pointer;
+  color: #f1f2f6;
+  text-align: center;
+  margin-right: 5px;
+  margin-top: 5px;
+}

@@ -1,0 +1,15 @@
+CourseName,课程名称
+ChapterTotal,章节数
+Running,是否正在运行
+Team_MultiChapter,是否允许一个队伍负责多个章节
+Team_CapabilityMinimum,队伍人数下限
+Team_CapabilityMaximum,队伍人数上限
+Homework_DurationMinimum,作业有效时间段下限
+Homework_DurationMaximum,作业有效时间段上限
+Homework_QuestionMinimum,作业题目数量下限
+Homework_QuestionMaximum,作业题目数量上限
+Homework_TimeLimit,作业是否限时完成
+Homework_TimeLimitMinimum,作业最短时限
+Homework_TimeLimitMaximum,作业最长时限
+Homework_RandamQuestion,是否随机出题
+Homework_AllowRedo,是否允许重做

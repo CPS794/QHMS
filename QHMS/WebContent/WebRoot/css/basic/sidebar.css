@@ -1,0 +1,228 @@
+@charset "utf-8";
+/*=============color===============*/
+/*==============font================*/
+/*==============size================*/
+/* 样式清零 */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  /* 样式清零 */
+  /* 基线对齐 */
+  vertical-align: baseline;
+  text-decoration: none;
+  list-style: none;
+}
+/* 整体页面的样式 */
+
+html body {
+  background: #f1f2f6;
+  font-family: "Microsoft YaHei", serif;
+}
+.main {
+  margin-left: 5px;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: #c0c8c9;
+}
+.btn:hover {
+  border: solid 1px transparent;
+}
+/* 合并边框 */
+
+table {
+  border-collapse: collapse;
+}
+/* 防止用户拉伸 */
+
+textarea {
+  resize: none;
+}
+.mainLi {
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 18px;
+}
+.mainLi:link {
+  text-decoration: none;
+  color: white;
+  -webkit-transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+}
+.menuBtn {
+  margin-top: 5px;
+  margin-left: 5px;
+  border-radius: 0;
+}
+.subMenu {
+  font-size: 16px;
+}
+.picture {
+  width: 150px;
+  height: 150px;
+}
+/* 设置超链接处的样式 */
+
+.mainMenu a:link {
+  text-decoration: none;
+  color: white;
+  -webkit-transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+}
+.mainMenu a:visited {
+  text-decoration: none;
+}
+.mainMenu a:hover {
+  text-decoration: none;
+  color: #22a5f5;
+  cursor: pointer;
+  border-left: solid 5px #22a5f5;
+  padding-left: 30px;
+}
+.mainMenu a:active {
+  text-decoration: none;
+}
+/* 设置侧边栏颜色大小位置 */
+
+.sidebar {
+  background: #28303b;
+  position: fixed;
+  z-index: 1000;
+}
+.sidebar-vertical {
+  width: 240px;
+  height: 100%;
+  top: 0;
+}
+/* 从左往右展开的侧边栏效果 */
+
+.sidebar-left {
+  left: -240px;
+}
+.sidebar-right {
+  right: -240px;
+}
+.sidebar-left.sidebar-open {
+  left: 0;
+}
+.sidebar-right.sidebar-open {
+  right: 0;
+}
+/* 主页面内容相应右移 */
+
+.sidebar-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+.sidebar-push-toright {
+  left: 240px;
+}
+.sidebar-push-toleft {
+  left: -240px;
+}
+/* 水平方向移入移出的动态效果 */
+
+.sidebar,
+.sidebar-push {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* 主菜单属性，设置背景色、前景色，去掉滚动条 */
+
+#mainNav {
+  background-color: #28303b;
+  color: white;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+/* 设置菜单栏中图片区域属性 */
+
+#mainNav #logo {
+  width: 240px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+  border-bottom: solid 1px #394155;
+}
+/* 设置菜单栏中ul元素属性（左边留空缩进） */
+
+#mainNav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 10px;
+}
+/* 设置菜单栏中li元素属性（上下间距） */
+
+#mainNav li {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+/* 设置菜单栏中mainLi类（即主菜单项）的鼠标悬浮动作 */
+
+.mainLi:hover {
+  text-decoration: none;
+  color: #22a5f5;
+  cursor: pointer;
+}

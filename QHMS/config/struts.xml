@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+    <struts>
+        <!-- Develop Mode -->
+        <constant name="struts.devMode" value="false" />
+        <!-- Whether classes to be reloaded when modify. Please set it to false when publish -->
+        <constant name="struts.convention.classes.reload" value="true" />
+        <!-- Whether browsers cache static things -->
+        <constant name="struts.serve.static.browserCache" value="true" />
+        <!-- The max size of file uploaded, set -1 to allow any -->
+        <constant name="struts.multipart.maxSize" value="-1" />
+        <!-- Set theme to simple to avoid extra html tag -->
+        <constant name="struts.ui.theme" value="simple" />
+        <!-- Suffix -->
+        <constant name="struts.action.extension" value="action" />
+        <!-- Result Path -->
+        <constant name="struts.convention.result.path" value="/WEB-INF/" />
+        <!-- URL Separator -->
+        <constant name="struts.convention.action.name.separator" value="_" />
+        <!-- Dynamic Invocation of Actions Using * -->
+        <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    </struts>

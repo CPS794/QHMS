@@ -1,0 +1,162 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>User Manage</title>
+    <!--这个是IE8的专用标记，是用来指定Internet Explorer 8 浏览器模拟某个特定版本IE浏览器的渲染方式，以此来解决IE浏览器的兼容问题。 -->
+    <!-- <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"> -->
+    <!--浏览器渲染及高速模式  为了让 IE 浏览器运行最新的渲染模式下  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 在双核浏览器情况下,使用极速模式 webkit内核渲染-->
+    <meta name="renderer" content="webkit">
+    <!-- 以下三句搭配用清缓存-->
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <!-- import jQuery -->
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/jquery/jquery-2.1.4.min.js"></script>
+    <!-- import Bootstrap -->
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <!-- import Bootbox -->
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/bootstrap-3.3.6-dist/js/bootbox.min.js"></script>
+    <!-- import summernote -->
+    <script type="text/javascript" src="/QHMS/WebRoot/plugin/summernote/summernote.min.js"></script>
+    <!-- import default style -->
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/plugin/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <!-- import summernote style -->
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/plugin/summernote/summernote.css">
+    <!-- import international javascript -->
+    <!-- import custom javascript -->
+    <script type="text/javascript" src="/QHMS/WebRoot/js/basic/enum.js"></script>
+    <script type="text/javascript" src="/QHMS/WebRoot/js/basic/utility.js"></script>
+    <script type="text/javascript" src="/QHMS/WebRoot/js/basic/component.js"></script>
+    <!-- import custom stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/css/public.css">
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/css/basic/patch.css">
+</head>
+
+<body class="sidebar-push sidebar-push-toright">
+    <link rel="stylesheet" type="text/css" href="/QHMS/WebRoot/css/basic/sidebar.css">
+    <script src="/QHMS/WebRoot/js/basic/menu.js" type="text/javascript"></script>
+    <script src="/QHMS/WebRoot/js/basic/sidebar.js" type="text/javascript"></script>
+    <!-- 用于从session中取值的隐藏域，本页面需要学号  -->
+    <input id="hiddenNumber" value="000" type="hidden">
+    <input id="hiddenName" value="000-adm" type="hidden">
+    <input id="hiddenType" value="1" type="hidden">
+    <!--Start Sidebar-->
+    <div class="sidebar sidebar-vertical sidebar-left sidebar-open" id="mainNav">
+        <div id="logo">
+            <img class="picture" src="/QHMS/WebRoot/image/userIcon.png" height="200" width="200">
+            <br>
+            <span id="userInfo">欢迎 000-adm老师 使用<br>题库作业管理系统！</span>
+            <br>
+        </div>
+        <nav id="nav">
+            <ul class="mainMenu">
+                <li onclick="goHome()" class="mainLi">系统首页</li>
+                <li></li>
+                <li class="mainLi">作业管理
+                    <ul class="subMenu" style="display: none;">
+                        <li><a href="">章节总览</a></li>
+                        <li><a href="">查看成绩</a></li>
+                    </ul>
+                </li>
+                <li class="mainLi">用户管理
+                    <ul class="subMenu" style="display: none;">
+                        <li><a href="adminManage.action">系统管理员</a></li>
+                        <li><a href="">学生</a></li>
+                    </ul>
+                </li>
+                <li class="mainLi">个人信息
+                    <ul class="subMenu" style="display: none;">
+                        <li onclick="showPasswordDialog(&quot;modifyInfo.action&quot;)"><a href="">修改信息</a></li>
+                        <li onclick="showPasswordDialog(&quot;password.action&quot;)"><a href="">修改密码</a></li>
+                    </ul>
+                </li>
+                <li onclick="exitSystem()" class="mainLi">安全退出</li>
+                <li></li>
+                <li onclick="aboutUs()" class="mainLi">关于我们</li>
+                <li></li>
+            </ul>
+        </nav>
+    </div>
+    <!--End Sidebar-->
+    <div class="menuBtn" id="sidebarToggle">菜单</div>
+    <!--Start Main-->
+    <div class="main container">
+        <h3 align="center">添加题目</h3>
+        <!-- 题目编号、章节、类型、分值 -->
+        <div class="row form-inline">
+            <div class="form-group col-md-3">
+                <label class="control-label" for="AddProblemId_Hide">题目编号：</label>
+                <input type="text" class="form-control" placeholder="" id="AddProblemId_Hide" value="">
+            </div>
+            <div class="form-group col-md-3">
+                <label class="control-label" for="AddProblemChapter">章节：</label>
+                <select class="form-control" name="AddProblemChapter" id="AddProblemChapter">
+                    <option value="null">-请选择-</option>
+                    <option value="0">01.绪论</option>
+                    <option value="1">02.线性表</option>
+                    <option value="2">03.栈和队列</option>
+                    <option value="3">04.数组和广义表</option>
+                    <option value="4">05.树</option>
+                    <option value="5">06.图</option>
+                    <option value="6">07.查找</option>
+                    <option value="7">08.排序</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label class="control-label" for="AddProblemType">题目类型：</label>
+                <select class="form-control" name="AddProblemType" id="AddProblemType">
+                    <option value="1">01.判断题</option>
+                    <option value="2">02.单项选择题</option>
+                    <option value="3">03.不定项选择题</option>
+                    <option value="4">04.数组和广义表</option>
+                    <option value="5">05.树</option>
+                    <option value="6">06.图</option>
+                    <option value="7">07.查找</option>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+                <label class="control-label" for="AddProblemPoint">默认分值：</label>
+                <input type="text" class="form-control" placeholder="" id="AddProblemPoint" value="5">
+            </div>
+        </div>
+        <br>
+        <!-- 题干 -->
+        <div class="row">
+            <div class="col-md-1">
+                <label class="control-label" for="summernote">题干：</label>
+            </div>
+            <div class="col-md-11">
+                <div id="summernote">Hello Summernote</div>
+                <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#summernote').summernote(utility.defaultSummernoteSetting);
+                });
+                </script>
+            </div>
+        </div>
+        <!-- 选项 & 答案 -->
+        <div id="target"></div>
+        <!-- 1. 判断题 -->
+        <!-- 2. 单项选择题 -->
+        <!-- 3. 不定项选择题 -->
+        <!-- 4. 填空题 -->
+        <!-- 5. 简答题 -->
+        <!-- 6. 综合题 -->
+        <br>
+        <!-- 按钮组 -->
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6" align="center">
+                <button type="button" class="btn btn-success" onclick="">提交题目</button>
+                <button type="button" class="btn btn-danger" onclick="">返回上页</button>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    <!--End Main-->
+</body>
+
+</html>

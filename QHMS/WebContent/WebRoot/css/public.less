@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+/*=============color===============*/
+@color-prime : #22a5f5;
+@color-warning : #fb6e52;
+@color-main : #f1f2f6;
+@color-border-table : #c0c0c0;
+
+/*==============font================*/
+@font-large : 24px;
+@font-prime : 20px;
+@font-middle : 18px;
+@font-small : 16px;
+
+/*==============size================*/
+@width-btn : 80px;
+@height-btn : 25px;
+@height-table : 30px;
+@padding-prime : 15px;
+@margin-menu-main : 5px;
+/* 样式清零 */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd,
+q, s, samp, small, strike, strong, sub, sup, tt, var, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    /* 样式清零 */
+    // background: none repeat scroll 0 0 transparent;
+    // border: 0 none;
+    // font-size: 100%;
+    // margin: 0;
+    // outline: 0 none;
+    // padding: 0;
+
+    /* 基线对齐 */
+    vertical-align: baseline;
+
+    text-decoration: none;
+    list-style: none;
+}
+
+/* 整体页面的样式 */
+html body{
+    background: @color-main;
+    font-family: "Microsoft YaHei", serif;
+}
+
+.main{
+    margin-left: @margin-menu-main;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #c0c8c9;
+}
+
+.btn{
+  &:hover {
+    border: solid 1px transparent;
+  }
+}
+
+/* 合并边框 */
+table {
+  border-collapse:collapse;
+}
+
+/* 防止用户拉伸 */
+textarea {
+  resize: none;
+}

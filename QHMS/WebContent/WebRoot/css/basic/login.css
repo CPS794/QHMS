@@ -1,0 +1,12 @@
+@charset "utf-8";
+/*=============color===============*/
+/*==============font================*/
+/*==============size================*/
+.qhms-login-panel {
+  margin-top: 150px;
+  vertical-align: middle;
+}
+.qhms-row-text {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
