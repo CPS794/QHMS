@@ -1,4 +1,4 @@
-mysql -u root -p
+-- mysql -u root -p
 CREATE DATABASE QHMSDB;
 CREATE USER qhmsmanager IDENTIFIED BY 'dbmanage';
 GRANT ALL PRIVILEGES ON QHMSDB.* TO 'qhmsmanager' WITH GRANT OPTION;
@@ -19,9 +19,8 @@ CREATE TABLE user (
 	PRIMARY KEY (id, type)
 );
 
-INSERT INTO `qhmsdb`.`user` (`id`, `name`, `password`, `studentClass`, `type`) VALUES ('000', '000-student', 'c4ca4238a0b923820dcc509a6f75849b', '000', '0');	
-INSERT INTO `qhmsdb`.`user` (`id`, `name`, `password`, `studentClass`, `type`) VALUES ('000', '000-admin', 'c4ca4238a0b923820dcc509a6f75849b', '000', '1');	
-INSERT INTO `qhmsdb`.`user` (`id`, `name`, `password`, `studentClass`, `type`) VALUES ('panjing', '000-admin', '06b2d6dcc2f71f7c38aae8e1fd6e1569', '000', '1');	
+INSERT INTO `qhmsdb`.`user` (`id`, `name`, `password`, `studentClass`, `type`) VALUES ('000', '000-student', 'c6f057b86584942e415435ffb1fa93d4', '000', '0');	
+INSERT INTO `qhmsdb`.`user` (`id`, `name`, `password`, `studentClass`, `type`) VALUES ('000', '000-admin', 'c6f057b86584942e415435ffb1fa93d4', '000', '1');	
 
 DROP TABLE IF EXISTS system_variable;
 CREATE TABLE system_variable (
