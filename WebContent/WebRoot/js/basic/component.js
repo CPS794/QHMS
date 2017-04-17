@@ -788,7 +788,7 @@ function sendFile(files, editor, $editable, id) {
             var imageUrl = data.ImageURLs;
             console.log(data);
             for (i in imageUrl) {
-                alert(imageUrl[i]);
+                // alert(imageUrl[i]);
                 $('#' + id).summernote('editor.insertImage', imageUrl[i]);
             }
 

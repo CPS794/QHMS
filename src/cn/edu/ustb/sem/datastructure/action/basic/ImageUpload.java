@@ -67,9 +67,9 @@ public class ImageUpload extends HttpServlet {
 				for (FileItem item : multiparts) {
 					if (!item.isFormField()) {
 						String name = new File(item.getName()).getName();
-						item.write(new File(UPLOAD_DIRECTORY + File.separator
-								/* ### TODO+ String.valueOf(System.currentTimeMillis())*/ +name));
-						String filePath ="/QHMS/WebRoot/res/image" + File.separator + name;
+						String time = String.valueOf(System.currentTimeMillis());
+						item.write(new File(UPLOAD_DIRECTORY + File.separator + time + name));
+						String filePath = "/QHMS/WebRoot/res/image" + File.separator + time + name;
 						HttpSession session = request.getSession(true);
 						session.setAttribute("currentFilePath", filePath);
 						jsonArray.add(filePath);
