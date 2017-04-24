@@ -74,14 +74,16 @@ public class GradeService {
 			}
 			double totalGrade=0;
 			int count=0;
+			boolean finish=true;
 			for (int j = 0; j < chapterNumber; j++) {
 				gradeArray += ",";
 				if (grades[i][j] == null) {
 					if (chapters.get(j).getId() == student.getGroup()) {
 						gradeArray += "\"出题组\"";
 					} else {
-						gradeArray += "0";
+						gradeArray += "\"未完成\"";
 						count++;
+						finish = false;
 					}
 				} else {
 					gradeArray += grades[i][j];
@@ -90,7 +92,10 @@ public class GradeService {
 				}
 			}
 			gradeArray += ",";
-			gradeArray += totalGrade/count;
+			if (count==0 || !finish) 
+				gradeArray += "\"未完成作业\"";
+			else
+				gradeArray += totalGrade/count;
 			gradeArray += "]";
 		}
 		gradeArray += "]";
